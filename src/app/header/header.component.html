@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Youtube Clone</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" 
+    routerLink="/upload-video"
+    aria-label="Example icon-button with heart icon">
+    <mat-icon>video_call</mat-icon>
+    </button>
+    <button *ngIf="isAuthenticated$ | async" mat-icon-button class="example-icon" 
+    aria-label="Example icon-button with share icon" id="btnAccountCircle"
+    [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="">Go Home</button>
+    </mat-menu>
+    <ng-template>
+      <button (click)="handleLogin()" *ngIf="!(isAuthenticated$ | async)">
+        <mat-icon aria-hidden="false" aria-label="login icon" fontIcon="login" [ariaSetSize]="50"></mat-icon>
+      </button>
+    </ng-template>
+    <button (click)="handleLogout()">
+      <mat-icon *ngIf="isAuthenticated$ | async" class="button__logout" 
+      aria-hidden="false" aria-label="logout icon" fontIcon="logout" [ariaSetSize]="50"></mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

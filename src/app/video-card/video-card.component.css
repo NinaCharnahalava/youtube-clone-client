@@ -1,0 +1,9 @@
+.example-card {
+  max-width: 400px;
+  width: 250px;
+}
+  
+.example-header-image {
+  background-image: url('https://w0.peakpx.com/wallpaper/359/324/HD-wallpaper-beauty-beautiful-blonde-blue-eyes-girl-gorgeous-portrait-thumbnail.jpg');
+  background-size: cover;
+}
